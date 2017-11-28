@@ -1,0 +1,16 @@
+nav {
+  a {
+    &.active {
+      color: green;
+    }
+  }
+}
+
+
+
+@media screen and (min-width:1800px)
+{
+  .bbSlides {
+    min-height: 400px !important;
+  }
+}

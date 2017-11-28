@@ -1,0 +1,33 @@
+.form {
+  width: 400px;
+  margin: 30px auto;
+  .error {
+    color: red;
+    font-style: italic;
+    font-size: 11px;
+  }
+  .good {
+    color: green;
+    font-style: italic;
+    font-size: 11px;
+  }
+  label {
+    margin-bottom: 10px;
+  }
+  input {
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid #eee;
+    outline: none;
+    &:focus {
+      outline: none;
+    }
+    &.er {
+      border-color: red;
+    }
+    &.noer {
+      border-color: green;
+    }
+  }
+
+}

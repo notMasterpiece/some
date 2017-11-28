@@ -1,0 +1,35 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  .main {
+    width: 70%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px 10px;
+  }
+  .article {
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px 5px;
+    background-color: #7367ff;
+  }
+}
+
+
+.experiences-item {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skill-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+}
