@@ -5,11 +5,13 @@ import Items from './items';
 import AddItem from './AddItem';
 import Search from './Search';
 
+import {connect} from 'react-redux';
+
+
+// AC
+import {Increment, decrement, all_complete, all_uncomplete, toggle_todos} from './../ActionCreators/AC';
 
 import './eat.scss';
-
-
-import {} from 'redux';
 
 
 
@@ -44,13 +46,11 @@ class Eat extends React.Component {
   }
 
   increment = () => {
-    console.log(1);
-    this.setState({
-      count : this.state.count + 1
-    },
-      () => {
-        console.log('state', this.state);
-    })
+    this.props.Increment();
+  };
+
+  decrement = () => {
+    this.props.decrement();
   };
 
 
@@ -109,12 +109,11 @@ class Eat extends React.Component {
 
 
 
-  addItem = item => {
-    console.log(item);
-    this.setState({
-      arr: [...this.state.arr, item ]
-    })
-  };
+  // addItem = item => {
+  //   this.setState({
+  //     arr: [...this.state.arr, item ]
+  //   })
+  // };
 
 
   removeItem = type => () => {
@@ -125,42 +124,37 @@ class Eat extends React.Component {
     })
   };
 
-  toggleItem = type => item => {
-    // console.log(item);
-    // console.log(type);
-    const arr = this.state.arr.map( el => {
-      if(el.id !== item.id) return el;
-      return {...item, pakage: !item.pakage};
-    });
-
-    // console.log(item);
-
-    this.setState({
-      arr
-    })
-  };
+  // toggleItem = type => item => {
+    // const arr = this.state.arr.map( el => {
+    //   if(el.id !== item.id) return el;
+    //   return {...item, pakage: !item.pakage};
+    // });
+  // };
 
 
 
 
   allPac = () => {
-    const arr = this.state.arr.map( item => {
-      return {...item, pakage:true};
-    });
-
-    this.setState({
-      arr
-    })
+    console.log(1);
+    this.props.all_complete();
+    // const arr = this.state.arr.map( item => {
+    //   return {...item, pakage:true};
+    // });
+    //
+    // this.setState({
+    //   arr
+    // })
   };
 
 
   allUnpac = () => {
+    this.props.all_uncomplete();
 
-    const arr = this.state.arr.map( item => {
-      return {...item, pakage:false}
-    });
-
-    this.setState({ arr });
+    // const arr = this.state.arr.map( item => {
+    //   return {...item, pakage:false}
+    // });
+    //
+    // this.setState({ arr });
 
   };
 
@@ -177,53 +171,71 @@ class Eat extends React.Component {
 
   render() {
 
+    console.log('store', store.getState());
+
     const {count, arr, value, searchValue} = this.state;
 
-    const pac = arr.filter( el => {
-      return el.pakage;
+
+    const {todos} = this.props;
+
+
+
+    const pacTodos = todos.filter( el => {
+      return el.completed;
     });
 
-    const unpac = arr.filter( el => {
-      return !el.pakage;
-    });
+    // console.log(pacTodos);
 
-    const arrLength = arr.length;
+    const unpacTodos = todos.filter( el => {
+      return !el.completed;
+    });
 
 
 
     return (
       <div className="counter">
-        <h1>Count: {count}</h1>
+        <h1>Count: {this.props.counter}</h1>
         <button onClick={()=> {this.increment()}}>increnent</button>
+        <button onClick={()=> {this.decrement()}}>decrement</button>
 
 
         <AddItem onSubmit={this.addItem} />
         <Search searchValue={this.searchValue}/>
 
-        <h3>pac: {pac.length}</h3>
+        {
+          pacTodos.length > 0 &&
+            <div>
+              <h3>Completed item: {pacTodos.length}</h3>
+              <button onClick={this.allPac}>Completed</button>
+            </div>
+        }
 
         <Items
           searchValue={searchValue}
-          pac={pac}
+          todos={pacTodos}
           onRemove={this.removeItem}
-          onToggle={this.toggleItem()}
         />
 
-        <button onClick={this.allPac}>Pac all</button>
 
 
 
 
-        <h3>unpac {unpac.length}</h3>
+
+        {
+          unpacTodos.length > 0 &&
+            <div>
+              <h3>Uncompleted items: {unpacTodos.length}</h3>
+              <button onClick={this.allUnpac}>Uncompleted</button>
+            </div>
+        }
 
         <Items
           searchValue={searchValue}
-          pac={unpac}
+          todos={unpacTodos}
           onRemove={this.removeItem}
-          onToggle={this.toggleItem()}
         />
 
-        <button onClick={this.allUnpac}>Unpac all</button>
+
 
 
 
@@ -232,4 +244,8 @@ class Eat extends React.Component {
   }
 }
 
-export default Eat;
+export default connect(state => {
+  return {
+    counter: state.counter,
+    todos: state.todos
+  }},{Increment, decrement, all_complete, all_uncomplete, toggle_todos})(Eat);

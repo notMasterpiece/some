@@ -2,6 +2,10 @@ import React from 'react';
 import uniqid from 'uniqid';
 
 
+import {add_item} from '../ActionCreators/AC';
+import { connect } from 'react-redux';
+
+
 class AddItem extends React.Component {
   constructor(props) {
     super(props);
@@ -25,13 +29,13 @@ class AddItem extends React.Component {
 
 
   handleSubmit = ev => {
-    // console.log(1);
-    const {onSubmit} = this.props;
-    const {value} = this.state;
     ev.preventDefault();
+    const {add_item} = this.props;
+    const {value} = this.state;
 
-    onSubmit({ name: value, id: uniqid(), pakage:true });
-    this.setState({ value: ''})
+    add_item({ title: value, id: uniqid(), completed:true });
+
+    this.setState({ value: ''});
 
 
   };
@@ -58,4 +62,4 @@ class AddItem extends React.Component {
 }
 
 
-export default AddItem;
+export default connect(null, {add_item})(AddItem);

@@ -16,22 +16,27 @@ import Eat from './app/components/Aplication/Aplication';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import {Provider} from 'react-redux';
+
+import store from './app/components/store/store';
+
 ReactDOM.render(
   <Router>
-    <div className="app">
-      <Nav />
-      <Switch>
-        <Route path="/" exact component={App}/>
-        <Route path="/form" component={Form}/>
-        <Route path="/game" component={Game}/>
-        <Route path="/about" component={About}/>
-        <Route path="/contact" component={Contact}/>
-        <Route path="/port" component={Port}/>
-        <Route path="/eat" component={Eat}/>
-        <Route path="*" component={NotFound}/>
-      </Switch>
-    </div>
-
+    <Provider store={store}>
+      <div className="app">
+        <Nav />
+        <Switch>
+          <Route path="/" exact component={App}/>
+          <Route path="/form" component={Form}/>
+          <Route path="/game" component={Game}/>
+          <Route path="/about" component={About}/>
+          <Route path="/contact" component={Contact}/>
+          <Route path="/port" component={Port}/>
+          <Route path="/eat" component={Eat}/>
+          <Route path="*" component={NotFound}/>
+        </Switch>
+      </div>
+    </Provider>
   </Router>,
   document.querySelector('#app')
 );
