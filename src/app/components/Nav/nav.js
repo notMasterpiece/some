@@ -19,7 +19,7 @@ class Nav extends React.Component {
 
 
     return (
-      <nav>
+      <nav className='top_menu'>
         <ul>
           <li><NavLink activeClassName='active' exact to="/">home</NavLink></li>
           <li><NavLink activeClassName='active' to="/contact">contact</NavLink></li>
@@ -27,7 +27,8 @@ class Nav extends React.Component {
           <li><NavLink activeClassName='active' to="/form">form</NavLink></li>
           <li><NavLink activeClassName='active' to="/game">game</NavLink></li>
           <li><NavLink activeClassName='active' to="/port">port</NavLink></li>
-          <li><NavLink activeClassName='active' to="/eat">Eat</NavLink></li>
+          <li><NavLink activeClassName='active' to="/Aplication">Aplication</NavLink></li>
+          <li><NavLink activeClassName='active' to="/shop">Shop</NavLink></li>
         </ul>
       </nav>
     )

@@ -5,8 +5,11 @@ import {
   ADD_ITEM,
   ALL_COMPLETE,
   ALL_UNCOMPLETE,
-  TOGGLE_TODOS
+  TOGGLE_TODOS,
+  DATE_RANGE
 } from '../Constans/constans';
+
+import {REMOVE_STATS} from '../Constans/shop';
 
 
 export function Increment() {
@@ -53,5 +56,22 @@ export function toggle_todos(id, item) {
   return {
     type: TOGGLE_TODOS,
     payload: {id, item}
+  }
+}
+export function date_range(dateRange) {
+  return {
+    type: DATE_RANGE,
+    payload: {dateRange}
+  }
+}
+
+
+//shop
+
+
+export function removeStatsInShop(id) {
+  return {
+    type: REMOVE_STATS,
+    payload: {id}
   }
 }

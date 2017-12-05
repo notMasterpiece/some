@@ -12,7 +12,8 @@ import Form from './app/components/Form/index';
 import Nav from './app/components/Nav/nav';
 import Game from './app/components/Game/index';
 import Port from './app/components/Port/port';
-import Eat from './app/components/Aplication/Aplication';
+import Shop from './app/components/Shop/shop';
+import Aplication from './app/components/Aplication/Aplication';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -32,7 +33,8 @@ ReactDOM.render(
           <Route path="/about" component={About}/>
           <Route path="/contact" component={Contact}/>
           <Route path="/port" component={Port}/>
-          <Route path="/eat" component={Eat}/>
+          <Route path="/aplication" component={Aplication}/>
+          <Route path="/shop" component={Shop}/>
           <Route path="*" component={NotFound}/>
         </Switch>
       </div>

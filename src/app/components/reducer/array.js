@@ -13,7 +13,7 @@ export default (todos = todo, action) => {
 
   if( action.type === 'ADD_ITEM') {
 
-    return ([...todos, action.payload.item]);
+    return ([action.payload.item, ...todos]);
 
   }
 

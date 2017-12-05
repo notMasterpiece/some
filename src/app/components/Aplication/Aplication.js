@@ -1,11 +1,13 @@
 import React from 'react';
 import uniqid from 'uniqid';
+import Daypiker from '../DayPicer/Daypiker';
 
 import Items from './items';
 import AddItem from './AddItem';
 import Search from './Search';
 
 import {connect} from 'react-redux';
+import { CSSTransitionGroup } from 'react-transition-group';
 
 
 // AC
@@ -198,7 +200,7 @@ class Eat extends React.Component {
         <button onClick={()=> {this.increment()}}>increnent</button>
         <button onClick={()=> {this.decrement()}}>decrement</button>
 
-
+        <Daypiker />
         <AddItem onSubmit={this.addItem} />
         <Search searchValue={this.searchValue}/>
 
@@ -209,12 +211,11 @@ class Eat extends React.Component {
               <button onClick={this.allPac}>Completed</button>
             </div>
         }
-
-        <Items
-          searchValue={searchValue}
-          todos={pacTodos}
-          onRemove={this.removeItem}
-        />
+            <Items
+              searchValue={searchValue}
+              todos={pacTodos}
+              onRemove={this.removeItem}
+            />
 
 
 

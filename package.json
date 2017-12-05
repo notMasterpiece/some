@@ -20,11 +20,15 @@
     "normalize.css": "^7.0.0",
     "react": "^16.0.0",
     "react-addons-css-transition-group": "^15.6.2",
+    "react-day-picker": "^7.0.5",
     "react-dom": "^16.0.0",
+    "react-helmet": "^5.2.0",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.1.1",
+    "react-transition-group": "^2.2.1",
     "redux": "^3.7.2",
+    "reselect": "^3.0.1",
     "uniqid": "^4.1.1"
   },
   "devDependencies": {

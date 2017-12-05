@@ -1,0 +1,1 @@
+export const REMOVE_STATS = 'REMOVE_STATS';

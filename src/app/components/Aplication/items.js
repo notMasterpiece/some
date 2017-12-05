@@ -1,6 +1,8 @@
 import React from 'react';
 import uniqid from 'uniqid';
 
+import { CSSTransitionGroup } from 'react-transition-group';
+
 
 //redux
 import {connect} from 'react-redux';
@@ -31,24 +33,26 @@ class Items extends React.Component {
 
     return (
       <div className="pac_wrap">
-        {
-          todos.filter((el => el.title.toLowerCase().includes(value.toLowerCase()))).map(el => {
-            return (
-              <div className="item" key={uniqid()}>
-                <label htmlFor={el.id}>
-                  <input
-                    type="checkbox"
-                    checked={el.completed}
-                    onChange={ this.toggleItems(el.id) }
-                  />
-                </label>
-                <h5 className="name">{el.title}</h5>
-                <div className="name">{el.id}</div>
-                <button onClick={this.removeItems(el.id)}>X</button>
-              </div>
-            )
-          })
-        }
+          {
+            todos.filter((el => el.title.toLowerCase().includes(value.toLowerCase()))).map(el => {
+              return (
+                <div className="item" key={uniqid()}>
+                  <label htmlFor={el.id}>
+                    <input
+                      type="checkbox"
+                      checked={el.completed}
+                      onChange={ this.toggleItems(el.id) }
+                    />
+                  </label>
+                  <h5 className="name">{el.title}</h5>
+                  <div className="name">{el.id}</div>
+                  <button onClick={this.removeItems(el.id)}>X</button>
+                  <p>lola</p>
+                </div>
+              )
+            })
+          }
+
       </div>
     )
   }

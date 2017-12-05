@@ -6,6 +6,19 @@ nav {
   }
 }
 
+.top_menu {
+  ul {
+    list-style-type: none;
+  }
+  li {
+    display: inline-block;
+  }
+  a {
+    padding: 10px 20px;
+    display: block;
+  }
+}
+
 
 
 @media screen and (min-width:1800px)

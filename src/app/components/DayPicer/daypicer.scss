@@ -1,0 +1,11 @@
+.DayPicker {
+  font-size: 15px;
+}
+
+.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  background-color: #851997 !important;
+}
+
+.DayPicker-Day {
+  padding: 0.5rem 0.6rem !important;
+}
