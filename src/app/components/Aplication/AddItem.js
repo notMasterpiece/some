@@ -48,9 +48,10 @@ class AddItem extends React.Component {
 
     return (
       <form action="" className='form' onSubmit={this.handleSubmit}>
-        <label htmlFor="">
+        <label htmlFor="addItem">
           Add item
           <input
+            id='addItem'
             type="text"
             onChange={this.handleChange}
             value={value}

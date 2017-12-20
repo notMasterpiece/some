@@ -1,0 +1,95 @@
+body {
+  font-family: 'Coming Soon', cursive !important;
+}
+
+.movie-search {
+  .form-control {
+    font-size: 15px;
+    position: relative;
+    padding-right: 95px;
+  }
+  .search_btn {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    background-color: #333;
+    border: 0;
+    color: #fff;
+    height: 30px;
+    cursor: pointer;
+    padding: 0 20px;
+    &:hover {
+      background-color: #222;
+    }
+  }
+}
+
+.movie-item {
+  position: relative;
+  width: 300px;
+  margin: 0 auto 20px;
+  &:hover {
+    .movie_hover {
+      opacity: 1;
+    }
+  }
+  .movie_hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    padding: 10px;
+    color: #fff;
+    opacity: 0;
+    -webkit-transition: opacity 300ms ease;
+    -moz-transition: opacity 300ms ease;
+    -ms-transition: opacity 300ms ease;
+    -o-transition: opacity 300ms ease;
+    transition: opacity 300ms ease;
+  }
+  .movie-date {
+    width: 100%;
+    height: 25px;
+    text-align: right;
+    color: cornsilk;
+  }
+  i {
+    margin-right: 7px;
+  }
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #dadae8;
+  }
+  .movie_popular {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+  }
+  .movie-text {
+    max-height: 200px;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+  }
+  .favorite {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 400ms ease;
+    &.scale {
+      transform: scale(1.1);
+    }
+    i {
+      margin-right: 0;
+      width: 30px;
+      height: 30px;
+      font-size: 30px;
+    }
+  }
+}
+

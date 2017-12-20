@@ -3,8 +3,6 @@ import todo from '../../../data';
 
 export default (todos = todo, action) => {
 
-  console.log('action',  action);
-
   if( action.type === 'REMOVE_ITEM') {
     return todos.filter( item => {
       return item.id !== action.payload.id;

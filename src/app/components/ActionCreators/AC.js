@@ -9,7 +9,14 @@ import {
   DATE_RANGE
 } from '../Constans/constans';
 
-import {REMOVE_STATS} from '../Constans/shop';
+import {
+  REMOVE_STATS,
+  ADD_GROSERY,
+  REMOVE_GROSERY,
+  SEARCH,
+  ADD_MOVIE,
+  FAV_MOVIE
+} from '../Constans/shop';
 
 
 export function Increment() {
@@ -65,7 +72,6 @@ export function date_range(dateRange) {
   }
 }
 
-
 //shop
 
 
@@ -73,5 +79,40 @@ export function removeStatsInShop(id) {
   return {
     type: REMOVE_STATS,
     payload: {id}
+  }
+}
+
+
+export function addGroseryInShop(id) {
+  return {
+    type: ADD_GROSERY,
+    payload: {id}
+  }
+}
+
+export function removeGroseryInShop(id) {
+  return {
+    type: REMOVE_GROSERY,
+    payload: {id}
+  }
+}
+
+export function searchInShop(value) {
+  return {
+    type: SEARCH,
+    payload: {value}
+  }
+}
+export function addMovie(movie) {
+  return {
+    type: ADD_MOVIE,
+    payload: {movie}
+  }
+}
+
+export function favMovie(movie) {
+  return {
+    type: FAV_MOVIE,
+    payload: {movie}
   }
 }

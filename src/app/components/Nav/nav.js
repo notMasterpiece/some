@@ -29,6 +29,9 @@ class Nav extends React.Component {
           <li><NavLink activeClassName='active' to="/port">port</NavLink></li>
           <li><NavLink activeClassName='active' to="/Aplication">Aplication</NavLink></li>
           <li><NavLink activeClassName='active' to="/shop">Shop</NavLink></li>
+          <li><NavLink activeClassName='active' to="/ru">ru</NavLink></li>
+          <li><NavLink activeClassName='active' to="/movie">Movie</NavLink></li>
+          <li><NavLink activeClassName='active' to="/fav">fav</NavLink></li>
         </ul>
       </nav>
     )

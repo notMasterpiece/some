@@ -14,6 +14,9 @@ import Game from './app/components/Game/index';
 import Port from './app/components/Port/port';
 import Shop from './app/components/Shop/shop';
 import Aplication from './app/components/Aplication/Aplication';
+import ArticleList from './app/components/Ru/ArticleList';
+import Movie from './app/components/Movie/Movie';
+import FavMovieList from './app/components/Movie/FavMovieList';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -35,6 +38,9 @@ ReactDOM.render(
           <Route path="/port" component={Port}/>
           <Route path="/aplication" component={Aplication}/>
           <Route path="/shop" component={Shop}/>
+          <Route path="/ru" component={ArticleList}/>
+          <Route path="/movie" component={Movie}/>
+          <Route path="/fav" component={FavMovieList}/>
           <Route path="*" component={NotFound}/>
         </Switch>
       </div>

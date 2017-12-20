@@ -12,6 +12,7 @@
     "url": "https://github.com/KevinPy/Iceberg/issues"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "babel-preset-stage-0": "^6.24.1",
     "classnames": "^2.2.5",
     "faker": "^4.1.0",
